@@ -2,11 +2,13 @@
     padding: 0;
     margin: 0;
     font-family: arial, serif;
+    box-sizing: border-box;
 }
 
 a {
     text-decoration: none;
     color: #3d5af1;
+    display: inline-block;
 }
 
 a:hover {
@@ -32,6 +34,11 @@ button:hover,
 .btn:hover {
     background-color: azure;
     color: #3d5af1;
+}
+
+/* -=-=-=-=-=-=-=-=-=-=-=-=- CSSku -=-=-=-=-=-=-=-=-=-=-=-=- */
+.mt5 {
+    margin-top: 50px;
 }
 
 /* -=-=-=-=-=-=-=-=-=-=-=-=- Nav -=-=-=-=-=-=-=-=-=-=-=-=- */
@@ -65,24 +72,61 @@ header {
     display: grid;
     gap: 10px;
     grid-template-areas:
-        'hero kategori1 kategori2'
-        'hero kategori3 kategori4';
-    height: 300px;
+        'slider kategori1 kategori2'
+        'slider kategori3 kategori4';
+    min-height: 300px;
 }
 
-.hero {
-    grid-area: hero;
+/* -=-=-=-=-=-=-=-=-=-=-=-=- Slider -=-=-=-=-=-=-=-=-=-=-=-=- */
+.slider {
+    grid-area: slider;
     background-color: black;
-    min-width: 400px;
+    overflow: hidden;
+    min-width: 500px;
+
 }
 
+.slide {
+    display: flex;
+    min-width: 500%;
+    height: 100%;
+    /* transform: translateX(-20%); */
+}
+
+.slide>* {
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+}
+
+.img1 {
+    background-image: url(./img/slide/1.jpeg);
+}
+
+.img2 {
+    background-image: url(./img/slide/2.jpeg);
+}
+
+.img3 {
+    background-image: url(./img/slide/3.jpeg);
+}
+
+.img4 {
+    background-image: url(./img/slide/4.jpeg);
+}
+
+.img5 {
+    background-image: url(./img/slide/5.jpeg);
+}
+
+/* -=-=-=-=-=-=-=-=-=-=-=-=- Kategori -=-=-=-=-=-=-=-=-=-=-=-=- */
 .kategori {
     padding: 20px;
+    overflow: hidden;
 }
 
 .kategori img {
     float: right;
-    /* margin-bottom: -200px; */
 }
 
 .kategori1 {
@@ -121,16 +165,29 @@ header {
 
     header {
         grid-template-areas:
-            'hero hero'
-            'kategori1 kategori2'
+            'slider kategori1'
+            'slider kategori2'
             'kategori3 kategori4';
     }
 
-    .hero {
-        height: 250px;
+    .slider {
+        min-height: 300px;
     }
 
     .kategori {
-        height: 150px;
+        min-height: 150px;
+    }
+}
+
+@media (max-width: 600px) {
+    nav {
+        padding: 10px 25px;
+    }
+
+    header {
+        grid-template-areas:
+            'slider slider'
+            'kategori1 kategori2'
+            'kategori3 kategori4';
     }
 }
