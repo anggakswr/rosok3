@@ -1,0 +1,136 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: arial, serif;
+}
+
+a {
+    text-decoration: none;
+    color: #3d5af1;
+}
+
+a:hover {
+    color: slategray;
+}
+
+input,
+button {
+    border: 1px solid lightgray;
+    padding: 5px;
+}
+
+button,
+.btn {
+    cursor: pointer;
+    background-color: #3d5af1;
+    color: #fff;
+    border: none;
+    transition: .3s;
+}
+
+button:hover,
+.btn:hover {
+    background-color: azure;
+    color: #3d5af1;
+}
+
+/* -=-=-=-=-=-=-=-=-=-=-=-=- Nav -=-=-=-=-=-=-=-=-=-=-=-=- */
+nav {
+    padding: 10px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 1px lightgray;
+}
+
+nav h1 {
+    font-family: 'Roboto', sans-serif;
+}
+
+.btn {
+    padding: 10px;
+}
+
+nav input {
+    width: 400px;
+}
+
+/* -=-=-=-=-=-=-=-=-=-=-=-=- Container -=-=-=-=-=-=-=-=-=-=-=-=- */
+.container {
+    padding: 20px 5%;
+}
+
+/* -=-=-=-=-=-=-=-=-=-=-=-=- Header -=-=-=-=-=-=-=-=-=-=-=-=- */
+header {
+    display: grid;
+    gap: 10px;
+    grid-template-areas:
+        'hero kategori1 kategori2'
+        'hero kategori3 kategori4';
+    height: 300px;
+}
+
+.hero {
+    grid-area: hero;
+    background-color: black;
+    min-width: 400px;
+}
+
+.kategori {
+    padding: 20px;
+}
+
+.kategori img {
+    float: right;
+    /* margin-bottom: -200px; */
+}
+
+.kategori1 {
+    grid-area: kategori1;
+    background: linear-gradient(to left top, rgb(127, 127, 213) 50%, rgb(145, 234, 228) 50%);
+    color: darkblue;
+}
+
+.kategori2 {
+    grid-area: kategori2;
+    background: linear-gradient(to left top, rgb(243, 115, 53) 50%, rgb(253, 200, 48) 50%);
+    color: brown;
+}
+
+.kategori3 {
+    grid-area: kategori3;
+    background: linear-gradient(to left top, rgb(211, 204, 227) 50%, rgb(233, 228, 240) 50%);
+    color: darkslategray;
+}
+
+.kategori4 {
+    grid-area: kategori4;
+    background: linear-gradient(to left top, rgb(238, 156, 167) 50%, rgb(255, 221, 225) 50%);
+    color: maroon;
+}
+
+/* -=-=-=-=-=-=-=-=-=-=-=-=- Responsive -=-=-=-=-=-=-=-=-=-=-=-=- */
+@media (max-width: 800px) {
+    nav input {
+        width: 70%;
+    }
+
+    .container {
+        padding: 20px 30px;
+    }
+
+    header {
+        grid-template-areas:
+            'hero hero'
+            'kategori1 kategori2'
+            'kategori3 kategori4';
+    }
+
+    .hero {
+        height: 250px;
+    }
+
+    .kategori {
+        height: 150px;
+    }
+}
