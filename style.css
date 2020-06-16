@@ -1,7 +1,7 @@
 * {
     padding: 0;
     margin: 0;
-    font-family: arial, serif;
+    font-family: 'Roboto', arial, serif;
     box-sizing: border-box;
 }
 
@@ -22,7 +22,10 @@ button {
 }
 
 button,
-.btn {
+.btn-primary,
+.btn-secondary,
+.btn-danger,
+.btn-info {
     cursor: pointer;
     background-color: #3d5af1;
     color: #fff;
@@ -31,9 +34,54 @@ button,
 }
 
 button:hover,
-.btn:hover {
+.btn-primary:hover {
     background-color: azure;
     color: #3d5af1;
+}
+
+.btn-secondary {
+    background-color: #fff;
+    color: darkslategray;
+}
+
+.btn-secondary:hover {
+    background-color: darkslategray;
+    color: #fff;
+}
+
+.btn-danger {
+    background-color: maroon;
+    color: #fff;
+}
+
+.btn-danger:hover {
+    background-color: #fff;
+    color: maroon;
+}
+
+.btn-info {
+    background-color: brown;
+    color: #fff;
+}
+
+.btn-info:hover {
+    background-color: #fff;
+    color: brown;
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-danger,
+.btn-info {
+    padding: 10px;
+}
+
+.harga {
+    color: green;
+}
+
+.lokasi {
+    color: grey;
 }
 
 /* -=-=-=-=-=-=-=-=-=-=-=-=- CSSku -=-=-=-=-=-=-=-=-=-=-=-=- */
@@ -48,14 +96,6 @@ nav {
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 2px 1px lightgray;
-}
-
-nav h1 {
-    font-family: 'Roboto', sans-serif;
-}
-
-.btn {
-    padding: 10px;
 }
 
 nav input {
@@ -82,14 +122,15 @@ header {
     grid-area: slider;
     background-color: black;
     overflow: hidden;
-    min-width: 500px;
-
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
 }
 
 .slide {
     display: flex;
     min-width: 500%;
     height: 100%;
+    transition: .5s;
     /* transform: translateX(-20%); */
 }
 
@@ -117,6 +158,54 @@ header {
 
 .img5 {
     background-image: url(./img/slide/5.jpeg);
+}
+
+/* -=-=-=-=-=-=-=-=-=-=-=-=- Radio Button -=-=-=-=-=-=-=-=-=-=-=-=- */
+.slider input[type=radio] {
+    display: none;
+}
+
+.slidernav {
+    display: flex;
+    position: absolute;
+}
+
+.slider label {
+    width: 50px;
+    height: 10px;
+    border: 2px solid #fff;
+    margin: 6px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.slider label:hover {
+    background-color: #fff;
+}
+
+.active {
+    background-color: #fff;
+}
+
+#radio1:checked~.slide {
+    transform: translateX(0);
+}
+
+#radio2:checked~.slide {
+    /* transform: translateX(-20%); */
+    margin-left: -20%;
+}
+
+#radio3:checked~.slide {
+    transform: translateX(-40%);
+}
+
+#radio4:checked~.slide {
+    transform: translateX(-60%);
+}
+
+#radio5:checked~.slide {
+    transform: translateX(-80%);
 }
 
 /* -=-=-=-=-=-=-=-=-=-=-=-=- Kategori -=-=-=-=-=-=-=-=-=-=-=-=- */
@@ -153,8 +242,46 @@ header {
     color: maroon;
 }
 
+/* -=-=-=-=-=-=-=-=-=-=-=-=- Botol -=-=-=-=-=-=-=-=-=-=-=-=- */
+.productslider {
+    margin-top: 50px;
+    /* display: flex;
+    justify-content: space-between; */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    /* grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 1fr 0.5fr; */
+}
+
+.productslider h1 {
+    grid-column: 1 / -1;
+}
+
+.productitem {
+    /* flex: 1; */
+    padding: 10px;
+}
+
+.productitem img {
+    width: 180px;
+}
+
+.prev,
+.next {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* flex: 0.3; */
+    color: grey;
+    cursor: pointer;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: azure;
+}
+
 /* -=-=-=-=-=-=-=-=-=-=-=-=- Responsive -=-=-=-=-=-=-=-=-=-=-=-=- */
-@media (max-width: 800px) {
+@media (max-width: 1024px) {
     nav input {
         width: 70%;
     }
@@ -179,9 +306,10 @@ header {
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     nav {
-        padding: 10px 25px;
+        padding: 10px 15px;
+        font-size: 12px;
     }
 
     header {
@@ -189,5 +317,9 @@ header {
             'slider slider'
             'kategori1 kategori2'
             'kategori3 kategori4';
+    }
+
+    .kategori a {
+        margin-top: 10px;
     }
 }
