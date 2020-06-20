@@ -8,7 +8,8 @@
 a {
   text-decoration: none;
   color: #3d5af1;
-  display: inline-block; /* spy bs diubah2 ukuranny */
+  display: inline-block;
+  /* spy bs diubah2 ukuranny */
 }
 
 a:hover {
@@ -128,7 +129,9 @@ nav input {
 
 /* -=-=-=-=-=-=-=-=-=-=-=-=- Container -=-=-=-=-=-=-=-=-=-=-=-=- */
 .container {
-  padding: 7% 5%;
+  padding: 80px 5%;
+  max-width: 1280px;
+  margin: auto;
 }
 
 /* -=-=-=-=-=-=-=-=-=-=-=-=- Header -=-=-=-=-=-=-=-=-=-=-=-=- */
@@ -158,7 +161,7 @@ header {
   /* transform: translateX(-20%); */
 }
 
-.slide > * {
+.slide>* {
   background-size: cover;
   background-position: center;
   width: 100%;
@@ -185,16 +188,17 @@ header {
 }
 
 /* -=-=-=-=-=-=-=-=-=-=-=-=- Radio Button -=-=-=-=-=-=-=-=-=-=-=-=- */
-.slider input[type="radio"] {
-  display: none;
+.slidernav input[type="radio"] {
+  visibility: hidden;
 }
 
 .slidernav {
   display: flex;
   position: absolute;
+  z-index: 1;
 }
 
-.slider label {
+.slidernav label {
   width: 20px;
   height: 20px;
   border: 2px solid #fff;
@@ -203,33 +207,13 @@ header {
   transition: 0.3s;
 }
 
-.slider label:hover {
+.slidernav label:hover {
   background-color: #fff;
 }
 
+/* kotak hrs berwarna putih ketika gambar tayang */
 .active {
   background-color: #fff;
-}
-
-#radio1:checked ~ .slide {
-  transform: translateX(0);
-}
-
-#radio2:checked ~ .slide {
-  /* transform: translateX(-20%); */
-  margin-left: -20%;
-}
-
-#radio3:checked ~ .slide {
-  transform: translateX(-40%);
-}
-
-#radio4:checked ~ .slide {
-  transform: translateX(-60%);
-}
-
-#radio5:checked ~ .slide {
-  transform: translateX(-80%);
 }
 
 /* -=-=-=-=-=-=-=-=-=-=-=-=- Kategori -=-=-=-=-=-=-=-=-=-=-=-=- */
@@ -244,41 +228,33 @@ header {
 
 .kategori1 {
   grid-area: kategori1;
-  background: linear-gradient(
-    to left top,
-    rgb(127, 127, 213) 50%,
-    rgb(145, 234, 228) 50%
-  );
+  background: linear-gradient(to left top,
+      rgb(127, 127, 213) 50%,
+      rgb(145, 234, 228) 50%);
   color: darkblue;
 }
 
 .kategori2 {
   grid-area: kategori2;
-  background: linear-gradient(
-    to left top,
-    rgb(243, 115, 53) 50%,
-    rgb(253, 200, 48) 50%
-  );
+  background: linear-gradient(to left top,
+      rgb(243, 115, 53) 50%,
+      rgb(253, 200, 48) 50%);
   color: brown;
 }
 
 .kategori3 {
   grid-area: kategori3;
-  background: linear-gradient(
-    to left top,
-    rgb(211, 204, 227) 50%,
-    rgb(233, 228, 240) 50%
-  );
+  background: linear-gradient(to left top,
+      rgb(211, 204, 227) 50%,
+      rgb(233, 228, 240) 50%);
   color: darkslategray;
 }
 
 .kategori4 {
   grid-area: kategori4;
-  background: linear-gradient(
-    to left top,
-    rgb(238, 156, 167) 50%,
-    rgb(255, 221, 225) 50%
-  );
+  background: linear-gradient(to left top,
+      rgb(238, 156, 167) 50%,
+      rgb(255, 221, 225) 50%);
   color: maroon;
 }
 
@@ -305,6 +281,7 @@ header {
   flex: 0.3;
   color: grey;
   cursor: pointer;
+  position: relative;
 }
 
 .prev:hover,
@@ -330,7 +307,7 @@ header {
   height: 300px;
 }
 
-.product-header .nama-product-detail > * {
+.product-header .nama-product-detail>* {
   grid-area: nama;
   margin-top: 10px;
 }
@@ -349,16 +326,12 @@ header {
   border: 1px solid lightgrey;
 }
 
-.profil-toko > * {
+.profil-toko>* {
   margin-right: 10px;
 }
 
 /* -=-=-=-=-=-=-=-=-=-=-=-=- Responsive -=-=-=-=-=-=-=-=-=-=-=-=- */
 @media (max-width: 1024px) {
-  .container {
-    padding-top: 10%;
-  }
-
   header {
     grid-template-areas:
       "slider kategori1"
@@ -381,8 +354,7 @@ header {
 }
 
 @media (max-width: 768px) {
-  a,
-  p {
+  a {
     font-size: 12px;
   }
 
@@ -396,10 +368,6 @@ header {
 
   nav input {
     width: 70%;
-  }
-
-  .container {
-    padding-top: 20%;
   }
 
   header {
@@ -418,7 +386,7 @@ header {
   }
 
   .product-item img {
-    width: 140px;
+    width: 100px;
   }
 
   .product-header {
