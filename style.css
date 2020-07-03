@@ -3,6 +3,7 @@
   margin: 0;
   font-family: arial, serif;
   box-sizing: border-box;
+  border-radius: 5px;
 }
 
 a {
@@ -27,7 +28,8 @@ button,
 .btn-primary,
 .btn-secondary,
 .btn-danger,
-.btn-info {
+.btn-warning,
+.btn-success {
   cursor: pointer;
   background-color: #3d5af1;
   color: azure;
@@ -35,47 +37,38 @@ button,
   transition: 0.3s;
 }
 
-button:hover,
-.btn-primary:hover {
-  background-color: azure;
-  color: #3d5af1;
-}
-
-.btn-secondary {
-  background-color: azure;
-  color: darkslategray;
-}
-
-.btn-secondary:hover {
-  background-color: darkslategray;
-  color: azure;
-}
-
-.btn-danger {
-  background-color: maroon;
-  color: pink;
-}
-
-.btn-danger:hover {
-  background-color: pink;
-  color: maroon;
-}
-
-.btn-info {
-  background-color: brown;
-  color: orange;
-}
-
-.btn-info:hover {
-  background-color: orange;
-  color: brown;
-}
-
 .btn-primary,
 .btn-secondary,
 .btn-danger,
-.btn-info {
+.btn-warning,
+.btn-success {
   padding: 10px;
+}
+
+button:hover,
+.btn-primary:hover,
+.btn-secondary:hover,
+.btn-danger:hover,
+.btn-warning:hover,
+.btn-success:hover {
+  filter: brightness(80%);
+  color: #fff;
+}
+
+.btn-secondary {
+  background-color: darkslategray;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+}
+
+.btn-warning {
+  background-color: orange;
+}
+
+.btn-success {
+  background-color: #28a745;
 }
 
 /* -=-=-=-=-=-=-=-=-=-=-=-=- Warna Font -=-=-=-=-=-=-=-=-=-=-=-=- */
@@ -127,6 +120,16 @@ nav input {
   width: 400px;
 }
 
+nav a {
+  display: flex;
+  align-items: center;
+}
+
+nav img {
+  width: 40px;
+  margin-right: 10px;
+}
+
 /* -=-=-=-=-=-=-=-=-=-=-=-=- Container -=-=-=-=-=-=-=-=-=-=-=-=- */
 .container {
   padding: 80px 5%;
@@ -158,7 +161,6 @@ header {
   min-width: 500%;
   height: 100%;
   transition: 0.5s;
-  /* transform: translateX(-20%); */
 }
 
 .slide>* {
@@ -231,15 +233,13 @@ header {
   background: linear-gradient(to left top,
       rgb(127, 127, 213) 50%,
       rgb(145, 234, 228) 50%);
-  color: darkblue;
+  color: darkslateblue;
 }
 
 .kategori2 {
   grid-area: kategori2;
-  background: linear-gradient(to left top,
-      rgb(243, 115, 53) 50%,
-      rgb(253, 200, 48) 50%);
-  color: brown;
+  background: linear-gradient(to left top, rgb(253, 200, 48) 50%, rgb(243, 115, 53) 50%);
+  color: yellow;
 }
 
 .kategori3 {
@@ -273,22 +273,6 @@ header {
   width: 170px;
 }
 
-.prev,
-.next {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 0.3;
-  color: grey;
-  cursor: pointer;
-  position: relative;
-}
-
-.prev:hover,
-.next:hover {
-  background-color: azure;
-}
-
 /* -=-=-=-=-=-=-=-=-=-=-=-=- Header di Product Detail -=-=-=-=-=-=-=-=-=-=-=-=- */
 .product-header {
   height: 300px;
@@ -307,8 +291,11 @@ header {
   height: 300px;
 }
 
-.product-header .nama-product-detail>* {
+.product-header .nama-product-detail {
   grid-area: nama;
+}
+
+.nama-product-detail>* {
   margin-top: 10px;
 }
 
@@ -321,7 +308,7 @@ header {
 .profil-toko {
   grid-area: toko;
   display: flex;
-  align-items: end;
+  align-items: center;
   padding: 5px;
   border: 1px solid lightgrey;
 }
@@ -363,7 +350,7 @@ header {
   }
 
   nav h1 {
-    font-size: 12px;
+    display: none;
   }
 
   nav input {
@@ -397,11 +384,6 @@ header {
       "nama nama"
       "toko toko";
     font-size: 0.8em;
-  }
-
-  .prev,
-  .next {
-    flex: 0.1;
-    font-size: 9px;
+    margin-bottom: 350px;
   }
 }
