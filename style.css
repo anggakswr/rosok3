@@ -9,8 +9,8 @@
 a {
   text-decoration: none;
   color: #3d5af1;
-  display: inline-block;
   /* spy bs diubah2 ukuranny */
+  display: inline-block;
 }
 
 a:hover {
@@ -64,7 +64,7 @@ button:hover,
 }
 
 .btn-warning {
-  background-color: orange;
+  background-color: brown;
 }
 
 .btn-success {
@@ -89,7 +89,7 @@ button:hover,
   justify-content: space-between;
 }
 
-/* -=-=-=-=-=-=-=-=-=-=-=-=- Margin -=-=-=-=-=-=-=-=-=-=-=-=- */
+/* -=-=-=-=-=-=-=-=-=-=-=-=- Margin & Padding -=-=-=-=-=-=-=-=-=-=-=-=- */
 .mt3 {
   margin-top: 30px;
 }
@@ -100,6 +100,43 @@ button:hover,
 
 .mb1 {
   margin-bottom: 10px;
+}
+
+.mr1 {
+  margin-right: 10px;
+}
+
+/* -=-=-=-=-=-=-=-=-=-=-=-=- Table -=-=-=-=-=-=-=-=-=-=-=-=- */
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 30px;
+  color: black;
+}
+
+td,
+th {
+  text-align: left;
+  padding: 8px;
+  border-bottom: 1px solid lightgrey;
+  /* ini spy tulisan di table jd 1 baris smua*/
+  /* white-space: nowrap; */
+}
+
+/* -=-=-=-=-=-=-=-=-=-=-=-=- Form -=-=-=-=-=-=-=-=-=-=-=-=- */
+.tambah-barang .flex {
+  justify-content: start;
+  align-items: center;
+}
+
+.tambah-barang label {
+  width: 180px;
+}
+
+textarea {
+
+  border: 1px solid lightgrey;
 }
 
 /* -=-=-=-=-=-=-=-=-=-=-=-=- Nav -=-=-=-=-=-=-=-=-=-=-=-=- */
@@ -238,8 +275,8 @@ header {
 
 .kategori2 {
   grid-area: kategori2;
-  background: linear-gradient(to left top, rgb(253, 200, 48) 50%, rgb(243, 115, 53) 50%);
-  color: yellow;
+  background: linear-gradient(to left top, rgb(243, 115, 53) 50%, rgb(253, 200, 48) 50%);
+  color: brown;
 }
 
 .kategori3 {
@@ -315,6 +352,11 @@ header {
 
 .profil-toko>* {
   margin-right: 10px;
+}
+
+/* -=-=-=-=-=-=-=-=-=-=-=-=- Footer -=-=-=-=-=-=-=-=-=-=-=-=- */
+footer {
+  padding: 20px;
 }
 
 /* -=-=-=-=-=-=-=-=-=-=-=-=- Responsive -=-=-=-=-=-=-=-=-=-=-=-=- */
